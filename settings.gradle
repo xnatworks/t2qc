@@ -1,10 +1,28 @@
 /*
- * xnat-template: settings.gradle
+ * t2qc-plugin: settings.gradle
  * XNAT http://www.xnat.org
  * Copyright (c) 2020, Washington University School of Medicine
  * All Rights Reserved
  *
  * Released under the Simplified BSD.
  */
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        maven { url "https://nrgxnat.jfrog.io/nrgxnat/gradle-plugins-release" }
+        maven { url "https://nrgxnat.jfrog.io/nrgxnat/libs-release" }
+        mavenCentral()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            // xnat-data-builder is published to libs-release without a Gradle plugin marker artifact
+            if (requested.id.id == "org.nrg.xnat.build.xnat-data-builder") {
+                useModule("org.nrg.xnat.build:xnat-data-builder:${requested.version}")
+            }
+        }
+    }
+}
 
 rootProject.name = "t2qc-plugin"

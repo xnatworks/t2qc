@@ -1,4 +1,4 @@
-<!-- BEGIN T2QC plugin - xnat_imageSessionData_assessments.vm -->
+<!-- BEGIN neuroinfo QC plugins (boldqc, anatqc, t2qc; keep identical in all three) - xnat_imageSessionData_assessments.vm -->
 #if ( $om.getMinimalLoadAssessors().size() > 0 )
   <br /><br />
   <div class="edit_header1" style="margin-bottom:16px">Assessments</div>
@@ -37,4 +37,4 @@
     #end
   </table>
 #end
-<!-- END T2QC plugin - xnat_imageSessionData_assessments.vm -->
+<!-- END neuroinfo QC plugins (boldqc, anatqc, t2qc; keep identical in all three) - xnat_imageSessionData_assessments.vm -->
